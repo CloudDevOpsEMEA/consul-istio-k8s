@@ -1,13 +1,13 @@
 all:
   hosts:
     master:
-      ansible_host: 10.1.1.5
-      ip: 10.1.1.5
-      access_ip: 10.1.1.5
+      ansible_host: 10.1.10.5
+      ip: 10.1.10.5
+      access_ip: 10.1.10.5
     node:
-      ansible_host: 10.1.1.6
-      ip: 10.1.1.6
-      access_ip: 10.1.1.6
+      ansible_host: 10.1.10.6
+      ip: 10.1.10.6
+      access_ip: 10.1.10.6
   children:
     kube-master:
       hosts:
