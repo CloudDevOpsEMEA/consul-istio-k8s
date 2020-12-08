@@ -15,8 +15,10 @@ init: ## Prepare host
 	./update.sh
 	./packages.sh
 	./hosts.sh
-	./calicoctl.sh
 	./network-2nic.sh
+
+calico: ## Install calicoctl
+	./calicoctl.sh
 
 dist-upgrade: ## Upgrade ubuntu version
 	sudo do-release-upgrade -d 
