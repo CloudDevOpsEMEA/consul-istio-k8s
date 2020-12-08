@@ -12,7 +12,7 @@ mkdir -p ${TMP_BASE_DIR}/traditional
 mkdir -p ${TMP_BASE_DIR}/jumphost
 
 echo "Generating ssh key pairs"
-ssh-keygen -b 2048 -t rsa -f ${TMP_BASE_DIR}/bigip/id_rsa         -C ubuntu@jumphost      -q -N ""
+ssh-keygen -b 2048 -t rsa -f ${TMP_BASE_DIR}/bigip/id_rsa         -C ubuntu@bigip         -q -N ""
 ssh-keygen -b 2048 -t rsa -f ${TMP_BASE_DIR}/k8s-master/id_rsa    -C ubuntu@k8s-master    -q -N ""
 ssh-keygen -b 2048 -t rsa -f ${TMP_BASE_DIR}/k8s-node/id_rsa      -C ubuntu@k8s-node      -q -N ""
 ssh-keygen -b 2048 -t rsa -f ${TMP_BASE_DIR}/consul-master/id_rsa -C ubuntu@consul-master -q -N ""
