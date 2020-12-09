@@ -17,8 +17,8 @@ install:  ## Install consul server
 	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
 	sudo mv consul /usr/local/bin/
 	consul --version
-	sudo groupadd --system consul
-	sudo useradd -s /sbin/nologin --system -g consul consul
+	sudo groupadd --system consul || true
+	sudo useradd -s /sbin/nologin --system -g consul consul || true
 	sudo mkdir -p /var/lib/consul
 	sudo mkdir /etc/consul.d
 	sudo chown -R consul:consul /var/lib/consul
