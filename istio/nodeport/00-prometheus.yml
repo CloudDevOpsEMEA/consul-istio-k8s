@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: prometheus
+    release: istio
+  name: prometheus-np
+  namespace: istio-system
+spec:
+  ports:
+  - name: http-prometheus-np
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+    nodePort: 30000
+  selector:
+    app: prometheus
+  sessionAffinity: None
+  type: NodePort

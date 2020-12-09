@@ -16,3 +16,7 @@ install:  ## Install istio on k8s
 	cd istio-${ISTIO_VERSION} && \
 	sudo cp bin/istioctl /usr/local/bin && \
 	istioctl install --set profile=demo
+
+post-install:  ## Extra installation steps (nodeport exposure)
+	kubectl apply -f ./nodeport
+
