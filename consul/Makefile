@@ -20,7 +20,7 @@ install:  ## Install consul server
 	sudo groupadd --system consul || true
 	sudo useradd -s /sbin/nologin --system -g consul consul || true
 	sudo mkdir -p /var/lib/consul
-	sudo mkdir /etc/consul.d
+	sudo mkdir -p /etc/consul.d
 	sudo chown -R consul:consul /var/lib/consul
 	sudo chmod -R 775 /var/lib/consul
 	sudo chown -R consul:consul /etc/consul.d
