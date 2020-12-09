@@ -14,5 +14,5 @@ install:  ## Install istio on k8s
 	cd /tmp && \
 	curl -L https://istio.io/downloadIstio | ISTIO_VERSION=${ISTIO_VERSION} sh - && \
 	cd istio-${ISTIO_VERSION} && \
-	sudo cp bin/istioctl /usr/local/bin
+	sudo cp bin/istioctl /usr/local/bin && \
 	istioctl install --set profile=demo
