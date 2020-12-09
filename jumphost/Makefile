@@ -9,7 +9,7 @@ help: ## This help
 
 LOGGING_DIR=./logging
 LOGGING_NAMESPACE=logging
-FLUENT_BIT_CHART_DIR=${LOGGING_DIR}/charts
+FLUENT_BIT_CHART_DIR=${LOGGING_DIR}/charts/fluent-bit
 FLUENT_BIT_VALUES=${LOGGING_DIR}/fluentbit-udf-values.yaml
 
 
@@ -56,11 +56,11 @@ remove-cerebro:  ## Unistall elasticsearch web admin tool cerebro
 	sudo docker rmi lmenezes/cerebro:latest
 
 install-fluentbit:  ## Deploy fluentbit
-	kubectl apply -f 00_namespace.yaml
-	helm install fluent-bit ${FLUENT_BIT_CHART_DIR}/fluent-bit --values ${FLUENT_BIT_VALUES}	--namespace=${LOGGING_NAMESPACE} --wait
+	kubectl apply -f ${LOGGING_DIR}/00_namespace.yaml
+	helm install fluent-bit ${FLUENT_BIT_CHART_DIR} --values ${FLUENT_BIT_VALUES}	--namespace=${LOGGING_NAMESPACE} --wait
 
 update-fluentbit:  ## Update fluentbit
-	helm update fluent-bit ${FLUENT_BIT_CHART_DIR}/fluent-bit --values ${FLUENT_BIT_VALUES}	--namespace=${LOGGING_NAMESPACE} --wait
+	helm update fluent-bit ${FLUENT_BIT_CHART_DIR} --values ${FLUENT_BIT_VALUES}	--namespace=${LOGGING_NAMESPACE} --wait
 
 remove-fluentbit:  ## Remove fluentbit
 	helm uninstall fluent-bit --namespace=${LOGGING_NAMESPACE} || true
