@@ -25,6 +25,7 @@ install:  ## Install consul server
 	sudo chmod -R 775 /var/lib/consul
 	sudo chown -R consul:consul /etc/consul.d
 	sudo cp consul.service /etc/systemd/system/consul.service
+	sudo systemctl unmask consul.service
 	sudo systemctl daemon-reload
 	sudo cp config.json /etc/consul.d/config.json
 	sudo chown -R consul:consul /etc/consul.d
