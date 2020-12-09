@@ -65,3 +65,7 @@ update-fluentbit:  ## Update fluentbit
 remove-fluentbit:  ## Remove fluentbit
 	helm uninstall fluent-bit --namespace=${LOGGING_NAMESPACE} || true
 	kubectl delete -f 00_namespace.yaml || true
+
+install-prometheus-grafana:  ## Install prometheus and grafana
+	sudo apt-get install -y prometheus
+	sudo snap install grafana
