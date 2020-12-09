@@ -10,13 +10,24 @@ help: ## This help
 .DEFAULT_GOAL := help
 
 
-install:  ## Install consul server
+install-master:  ## Install consul server (bootstrap server with UI)
 	sudo apt-get install -y unzip gnupg2 curl wget consul
 	cd /tmp && \
 	wget https://releases.hashicorp.com/consul/${CONSULT_VERSION}/consul_${CONSULT_VERSION}_linux_amd64.zip && \
 	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
 	sudo mv consul /usr/bin/consul
 	consul --version
-	sudo cp config.json /etc/consul.d/config.json
+	sudo cp config-master.json /etc/consul.d/config.json
+	sudo systemctl start consul
+	sudo systemctl enable consul
+
+install-node:  ## Install consul server 
+	sudo apt-get install -y unzip gnupg2 curl wget consul
+	cd /tmp && \
+	wget https://releases.hashicorp.com/consul/${CONSULT_VERSION}/consul_${CONSULT_VERSION}_linux_amd64.zip && \
+	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
+	sudo mv consul /usr/bin/consul
+	consul --version
+	sudo cp config-node.json /etc/consul.d/config.json
 	sudo systemctl start consul
 	sudo systemctl enable consul
