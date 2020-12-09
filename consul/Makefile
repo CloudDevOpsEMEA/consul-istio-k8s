@@ -11,12 +11,7 @@ help: ## This help
 
 
 install:  ## Install consul server
-	sudo apt-get install -y unzip gnupg2 curl wget
-	cd /tmp && \
-	wget https://releases.hashicorp.com/consul/${CONSULT_VERSION}/consul_${CONSULT_VERSION}_linux_amd64.zip && \
-	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
-	sudo mv consul /usr/local/bin/
-	consul --version
+	sudo apt-get install -y consul
 
 
 
