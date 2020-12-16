@@ -19,6 +19,7 @@ install-master:  ## Install consul server (bootstrap server with UI)
 	consul --version
 	sudo cp master/config.json /etc/consul.d/config.json
 	sudo mkdir -p /var/log/consul
+	sudo chown -R consul:consul /var/log/consul
 	sudo systemctl start consul
 	sudo systemctl enable consul
 
@@ -31,5 +32,6 @@ install-node:  ## Install consul server
 	consul --version
 	sudo cp node/config.json /etc/consul.d/config.json
 	sudo mkdir -p /var/log/consul
+	sudo chown -R consul:consul /var/log/consul
 	sudo systemctl start consul
 	sudo systemctl enable consul
