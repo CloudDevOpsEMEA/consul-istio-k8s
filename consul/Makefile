@@ -17,7 +17,7 @@ install-master:  ## Install consul server (bootstrap server with UI)
 	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
 	sudo mv consul /usr/bin/consul
 	consul --version
-	sudo cp master/config.json /etc/consul.d/config.json
+	sudo cp master/*.json /etc/consul.d/
 	sudo mkdir -p /var/log/consul
 	sudo chown -R consul:consul /var/log/consul
 	sudo systemctl restart consul
@@ -30,7 +30,7 @@ install-node:  ## Install consul server
 	unzip consul_${CONSULT_VERSION}_linux_amd64.zip && \
 	sudo mv consul /usr/bin/consul
 	consul --version
-	sudo cp node/config.json /etc/consul.d/config.json
+	sudo cp node/*.json /etc/consul.d/
 	sudo mkdir -p /var/log/consul
 	sudo chown -R consul:consul /var/log/consul
 	sudo systemctl restart consul
