@@ -19,5 +19,8 @@
     "default_policy" : "allow"
   },
   "encrypt" : "TJ8iw/XJ+0/BSUMGuLFWkeT23LmGnfhmF/qWgA25wZU=",
-  "enable_script_checks" : true
+  "enable_script_checks" : true,
+  "connect" : {
+    "enabled" : true
+  }
 }

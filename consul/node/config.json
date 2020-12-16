@@ -20,5 +20,8 @@
   },
   "encrypt" : "TJ8iw/XJ+0/BSUMGuLFWkeT23LmGnfhmF/qWgA25wZU=",
   "enable_script_checks" : true,
-  "leave_on_terminate": true
+  "leave_on_terminate": true,
+  "connect" : {
+    "enabled" : true
+  }
 }
