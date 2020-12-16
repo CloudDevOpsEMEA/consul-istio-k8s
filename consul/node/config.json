@@ -9,7 +9,7 @@
   "advertise_addr" : "10.1.20.8",
   "bind_addr" : "0.0.0.0",
   "log_level" : "DEBUG",
-  "log_file" : "/var/log/consul/master.log",
+  "log_file" : "/var/log/consul/node.log",
   "datacenter" : "udf",
   "addresses" : {
     "http" : "0.0.0.0"
