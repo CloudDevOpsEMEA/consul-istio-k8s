@@ -16,7 +16,7 @@
   "data_dir" : "/var/lib/consul",
   "primary_datacenter": "udf",
   "acl" : {
-    "enabled" : true,
+    "enabled" : false,
     "default_policy" : "allow"
   },
   "encrypt" : "TJ8iw/XJ+0/BSUMGuLFWkeT23LmGnfhmF/qWgA25wZU=",
